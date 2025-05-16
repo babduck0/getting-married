@@ -5,6 +5,7 @@
     :image="title.image"
   />
   <Greetings :detail="elements" :date="date" :messages="ko.message" />
+  <Gallary />
   <Maps :location="location" />
 </template>
 
@@ -14,6 +15,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { onMounted } from "vue";
 import { useKakao } from "vue3-kakao-maps/@utils";
 
+import Gallary from "./components/Gallary.vue";
 import Greetings from "./components/Greetings.vue";
 import Hello from "./components/Hello.vue";
 import Maps from "./components/Maps.vue";
@@ -42,7 +44,7 @@ const elements = {
 };
 
 function gsaps() {
-  const sections = [".hello", ".greetings", ".maps"];
+  const sections = [".hello", ".greetings", ".gallary", ".maps"];
 
   sections.forEach(sectionSelector => {
     const textSelector = `${sectionSelector} .text-int`;
