@@ -1,6 +1,6 @@
 <template>
   <div ref="wedding-day" class="wedding-day">
-    <ContentsTitle title="Wedding Day" />
+    <ContentsTitle title="Wedding Day" :messages="[weddingDay.string]" />
     <div class="text-int">
       <Calendar
         class="tt"
@@ -8,16 +8,18 @@
         borderless
         expanded
         locale="en"
-        :attributes="[{ highlight: true, dates: [weddingDay] }]"
-        :min-date="weddingDay"
-        :max-date="weddingDay"
-        :from-page="calendarPage"
-        :to-page="calendarPage"
+        :attributes="[{ highlight: true, dates: [weddingDay.date] }]"
+        :min-date="weddingDay.date"
+        :max-date="weddingDay.date"
+        :from-page="weddingDay.calpage"
+        :to-page="weddingDay.calpage"
         :selectable="false"
       />
-      <div class="info">
-        <span class="tt">{{ formattedDates.full }}</span>
-        <span class="tt">{{ formattedDates.hour }}</span>
+      <div class="text-int d-day">
+        <strong class="tt">{{ weddingDay.dDay }}일</strong>
+        <span class="tt">{{
+          weddingDay.dDay > 0 ? "남았습니다." : "지났습니다."
+        }}</span>
       </div>
     </div>
   </div>
@@ -43,24 +45,19 @@ const props = defineProps<{
 
 const weddingDay = computed(() => {
   const { year, month, day, hour, minute } = props.date;
-  return new Date(year, month - 1, day, hour, minute);
-});
+  const date = new Date(year, month - 1, day, hour, minute);
 
-const calendarPage = computed(() => {
-  const { year, month } = props.date;
-  return { year, month: month - 1 };
-});
-
-const formattedDates = computed(() => {
-  const { year, month, day, hour, minute } = props.date;
+  const weekdays = ["일", "월", "화", "수", "목", "금", "토"];
   const strHour = hour > 12 ? `오후 ${hour - 12}` : hour;
 
-  const date = new Date(year, month - 1, day, hour, minute);
-  const weekdays = ["일", "월", "화", "수", "목", "금", "토"];
+  const timeDiff =
+    new Date(year, month - 1, day).getTime() - new Date().getTime();
 
   return {
-    full: `${year}년 ${month}월 ${day}일 (${weekdays[date.getDay()]})`,
-    hour: `${strHour}시 ${minute}분`,
+    date,
+    calpage: { year, month: month - 1 },
+    dDay: Math.ceil(timeDiff / (1000 * 3600 * 24)),
+    string: `${year}년 ${month}월 ${day}일 (${weekdays[date.getDay()]}) ${strHour}시 ${minute}분`,
   };
 });
 </script>
@@ -76,15 +73,17 @@ const formattedDates = computed(() => {
   color: $col-key;
   margin-top: #{$top-gap-2x}px;
 
-  .info {
+  .d-day {
     position: relative;
-    z-index: $z-bg;
     line-height: 1.6;
-
-    > span {
+    z-index: $z-bg;
+    font-size: $font-xs;
+    .tt {
       display: inline-block;
-      font-size: $font-xs;
-      padding: 10px;
+      padding: 4rem;
+    }
+    > strong {
+      font-weight: bold;
     }
   }
 }
@@ -95,6 +94,7 @@ const formattedDates = computed(() => {
   --vc-bg: $bg-color !important;
   .vc-title {
     color: $col-key !important;
+    pointer-events: none;
   }
   .vc-arrow {
     display: none;
