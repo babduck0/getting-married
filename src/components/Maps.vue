@@ -178,74 +178,70 @@ defineProps<{
   position: relative;
   margin-top: #{$top-gap-2x}px;
   color: $col-key;
-}
-.info {
-  position: relative;
-  z-index: $z-bg;
-  font-size: $font-xs;
-  line-height: 1.4;
-
-  margin-top: 20px;
-  strong {
-    font-weight: bold;
-  }
-  span {
-    margin-top: 10px;
-    font-size: $font-xxs;
-  }
-}
-.map-wrap {
-  position: relative;
-  margin: 0 -#{$side-padding};
-  z-index: $z-bg;
-
-  &.mapFixed {
+  .info {
     position: relative;
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
+    z-index: $z-bg;
+    font-size: $font-xs;
+    line-height: 1.4;
+
+    margin-top: 20px;
+    strong {
+      font-weight: bold;
     }
-    svg {
-      display: none;
+    span {
+      margin-top: 10px;
+      font-size: $font-xxs;
     }
   }
-}
-#map {
-  left: #{-$side-padding};
-  background-color: pink;
-}
-.way {
-  margin: 32px 0 0 20px;
-  .material-symbols-outlined {
-    vertical-align: middle;
-  }
-  > li {
-    margin-top: 22px;
-    font-size: $font-xxs;
-    line-height: 1.6;
-    dl {
-      display: flex;
-      dt {
-        width: 40rem;
+  .map-wrap {
+    position: relative;
+    margin: 0 -#{$side-padding};
+    z-index: $z-bg;
+
+    &.mapFixed {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
       }
-      dd {
-        text-align: left;
-        width: calc(100% - 40rem);
+      svg {
+        display: none;
       }
     }
+    .way {
+      margin: 32px 0 0 20px;
+      .material-symbols-outlined {
+        vertical-align: middle;
+      }
+      > li {
+        margin-top: 22px;
+        font-size: $font-xxs;
+        line-height: 1.6;
+        dl {
+          display: flex;
+          dt {
+            width: 40rem;
+          }
+          dd {
+            text-align: left;
+            width: calc(100% - 40rem);
+          }
+        }
+      }
+      .color-box {
+        display: inline-block;
+        border-radius: 10rem;
+        padding: 1.2rem 5px;
+        margin: 2rem;
+        text-align: center;
+        font-size: 80%;
+      }
+    }
   }
-}
-.color-box {
-  display: inline-block;
-  border-radius: 10rem;
-  padding: 1.2rem 5px;
-  margin: 2rem;
-  text-align: center;
-  font-size: 80%;
 }
 </style>
