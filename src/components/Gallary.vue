@@ -87,7 +87,7 @@ const thumbnailsConfig = {
 <style lang="scss">
 .gallary {
   position: relative;
-  margin-top: #{$top-gap-2x}px;
+  margin-top: #{$top-gap}px;
 
   .carousel {
     --vc-nav-background: rgba(255, 255, 255, 0.7);

@@ -101,7 +101,7 @@ function openNaverMap() {
 <style lang="scss" scoped>
 .navigation {
   position: relative;
-  margin-top: #{$top-gap}px;
+  margin-top: #{$top-gap-h}px;
   .icon {
     margin-left: 30px;
     margin-right: 30px;

@@ -68,7 +68,7 @@ const weddingDay = computed(() => {
 .wedding-day {
   position: relative;
   color: $col-key;
-  margin-top: #{$top-gap-2x}px;
+  margin-top: #{$top-gap}px;
 
   .d-day {
     position: relative;

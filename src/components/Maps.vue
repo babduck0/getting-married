@@ -197,7 +197,7 @@ async function copyAddress() {
 <style lang="scss">
 .maps {
   position: relative;
-  margin-top: #{$top-gap-2x}px;
+  margin-top: #{$top-gap}px;
   color: $col-key;
   .info {
     position: relative;
