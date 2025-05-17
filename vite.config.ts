@@ -8,6 +8,17 @@ import eslint from "vite-plugin-eslint";
 export default defineConfig({
   base: "/getting-married/",
   plugins: [vue(), eslint()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "@/assets/css/reset.scss";
+          @import "@/assets/css/variables.scss";
+          @import "@/assets/css/common.scss";
+        `,
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

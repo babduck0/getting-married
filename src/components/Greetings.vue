@@ -46,10 +46,6 @@ defineProps<{
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/css/reset.scss";
-@import "@/assets/css/variables.scss";
-@import "@/assets/css/common.scss";
-
 .greetings {
   position: relative;
   color: $col-key;

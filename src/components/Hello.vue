@@ -39,9 +39,6 @@ const imageUrl = computed(() => {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/css/reset.scss";
-@import "@/assets/css/variables.scss";
-@import "@/assets/css/common.scss";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap");
 
 .hello {

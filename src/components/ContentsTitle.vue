@@ -21,9 +21,6 @@ defineProps<{
 </script>
 
 <style lang="scss">
-@import "@/assets/css/variables.scss";
-@import "@/assets/css/common.scss";
-
 .contents-title {
   position: relative;
   z-index: $z-bg;

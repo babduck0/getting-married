@@ -81,8 +81,4 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss">
-@import "@/assets/css/reset.scss";
-@import "@/assets/css/variables.scss";
-@import "@/assets/css/common.scss";
-</style>
+<style lang="scss"></style>

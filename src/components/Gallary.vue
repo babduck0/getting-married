@@ -85,10 +85,6 @@ const thumbnailsConfig = {
 </script>
 
 <style lang="scss">
-@import "@/assets/css/reset.scss";
-@import "@/assets/css/variables.scss";
-@import "@/assets/css/common.scss";
-
 .gallary {
   position: relative;
   margin-top: #{$top-gap-2x}px;

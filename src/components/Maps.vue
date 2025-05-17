@@ -174,10 +174,6 @@ defineProps<{
 </script>
 
 <style lang="scss">
-@import "@/assets/css/reset.scss";
-@import "@/assets/css/variables.scss";
-@import "@/assets/css/common.scss";
-
 .maps {
   position: relative;
   margin-top: #{$top-gap-2x}px;

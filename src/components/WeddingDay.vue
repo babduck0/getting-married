@@ -63,9 +63,6 @@ const weddingDay = computed(() => {
 </script>
 
 <style lang="scss">
-@import "@/assets/css/reset.scss";
-@import "@/assets/css/variables.scss";
-@import "@/assets/css/common.scss";
 @import "v-calendar/style.css";
 
 .wedding-day {
