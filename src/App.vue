@@ -5,6 +5,7 @@
     :image="title.image"
   />
   <Greetings :detail="elements" :date="date" :messages="ko.message" />
+  <WeddingDay :date="date" />
   <Gallary />
   <Maps :location="location" />
 </template>
@@ -19,6 +20,7 @@ import Gallary from "./components/Gallary.vue";
 import Greetings from "./components/Greetings.vue";
 import Hello from "./components/Hello.vue";
 import Maps from "./components/Maps.vue";
+import WeddingDay from "./components/WeddingDay.vue";
 import { date, en, ko, location, title } from "./config/config.json";
 
 useKakao(import.meta.env.VITE_KAKAO_API_KEY);
@@ -44,7 +46,13 @@ const elements = {
 };
 
 function gsaps() {
-  const sections = [".hello", ".greetings", ".gallary", ".maps"];
+  const sections = [
+    ".hello",
+    ".greetings",
+    ".wedding-day",
+    ".gallary",
+    ".maps",
+  ];
 
   sections.forEach(sectionSelector => {
     const textSelector = `${sectionSelector} .text-int`;

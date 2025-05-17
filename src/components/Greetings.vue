@@ -20,28 +20,14 @@
         <strong class="tt">{{ detail.bride.name }}</strong>
       </p>
     </div>
-    <div class="info">
-      <p class="info-date text-int">
-        <span class="tt">{{ formattedDates.full }}</span>
-        <span class="tt">{{ formattedDates.hour }}</span>
-      </p>
-    </div>
   </div>
 </template>
 <script setup lang="ts">
-import { computed, defineOptions, defineProps } from "vue";
+import { defineOptions, defineProps } from "vue";
 
 defineOptions({
   name: "Greetings",
 });
-
-type WeddingDate = {
-  year: number;
-  month: number;
-  day: number;
-  hour: number;
-  minute: number;
-};
 
 type Role = "groom" | "bride";
 type CoupleInfo = {
@@ -53,24 +39,10 @@ type CoupleInfo = {
   };
 };
 
-const props = defineProps<{
+defineProps<{
   detail: CoupleInfo;
-  date: WeddingDate;
   messages?: Array<string>;
 }>();
-
-const formattedDates = computed(() => {
-  const { year, month, day, hour, minute } = props.date;
-  const strHour = hour > 12 ? `오후 ${hour - 12}` : hour;
-
-  const date = new Date(year, month - 1, day, hour, minute);
-  const weekdays = ["일", "월", "화", "수", "목", "금", "토"];
-
-  return {
-    full: `${year}년 ${month}월 ${day}일 (${weekdays[date.getDay()]})`,
-    hour: `${strHour}시 ${minute}분`,
-  };
-});
 </script>
 
 <style lang="scss" scoped>
@@ -87,14 +59,6 @@ const formattedDates = computed(() => {
     text-align: center;
     font-size: $font-xs;
     margin-top: 20px;
-    line-height: 1.6;
-  }
-
-  .info {
-    position: relative;
-    z-index: $z-bg;
-    margin: #{$top-gap}px 0 0 0;
-    font-size: $font-s;
     line-height: 1.6;
   }
 
