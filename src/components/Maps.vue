@@ -34,6 +34,11 @@
           }"
         />
       </KakaoMap>
+      <Navigation
+        :name="location.name"
+        :lat="location.detail.coordinate.base[0]"
+        :lng="location.detail.coordinate.base[1]"
+      />
       <ul class="way text-int">
         <li class="tt short">
           <dl>
@@ -127,6 +132,7 @@ import { defineProps } from "vue";
 import { KakaoMap, KakaoMapMarker } from "vue3-kakao-maps";
 
 import ContentsTitle from "@/components/ContentsTitle.vue";
+import Navigation from "@/components/Navigation.vue";
 
 import busColors from "../config/busColors.json";
 import seoulMetroColors from "../config/seoulMetroColors.json";
