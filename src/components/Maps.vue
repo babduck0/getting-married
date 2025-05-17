@@ -41,14 +41,17 @@
               <span class="material-symbols-outlined">directions_car</span>
             </dt>
             <dd>
-              <div>
+              <div class="car">
                 <span
                   v-for="(item, idx) in location.detail.transfortation.car
                     .address"
                   :key="idx"
-                  class="tt"
+                  class="tt address"
                   >{{ item }}</span
                 >
+                <span class="tt material-symbols-outlined" @click="copyAddress">
+                  content_copy
+                </span>
               </div>
             </dd>
           </dl>
@@ -168,9 +171,21 @@ type TransferColorMap = {
 const busColorMap = busColors as TransferColorMap;
 const subwayColorMap = seoulMetroColors as TransferColorMap;
 
-defineProps<{
+const props = defineProps<{
   location: LocationInformation;
 }>();
+
+async function copyAddress() {
+  const { address } = props.location.detail.transfortation.car;
+  if (!navigator.clipboard || !navigator.clipboard.writeText) {
+    alert("이 브라우저에서는 복사 기능을 지원하지 않습니다.");
+    return;
+  }
+  await navigator.clipboard
+    .writeText(address.join(" "))
+    .then(() => alert("주소가 복사되었습니다!"))
+    .catch(() => alert("복사에 실패했습니다."));
+}
 </script>
 
 <style lang="scss">
@@ -231,6 +246,16 @@ defineProps<{
             text-align: left;
             width: calc(100% - 40rem);
           }
+        }
+      }
+      .car {
+        align-items: center;
+        display: inline-flex;
+
+        .address {
+          margin-right: auto;
+          padding-right: 10rem;
+          // width: 90%;
         }
       }
       .color-box {
