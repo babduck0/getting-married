@@ -8,6 +8,7 @@
   <WeddingDay :date="weddingDay" />
   <Gallary />
   <Maps :location="location" />
+  <Account :groom="host.groom.account" :bridal="host.bride.account" />
 </template>
 
 <script setup lang="ts">
@@ -16,6 +17,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { onMounted } from "vue";
 import { useKakao } from "vue3-kakao-maps/@utils";
 
+import Account from "./components/Account.vue";
 import Gallary from "./components/Gallary.vue";
 import Greetings from "./components/Greetings.vue";
 import Hello from "./components/Hello.vue";
@@ -54,6 +56,7 @@ function gsaps() {
     ".wedding-day",
     ".gallary",
     ".maps",
+    ".accounts",
   ];
 
   sections.forEach(sectionSelector => {
