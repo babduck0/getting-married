@@ -2,10 +2,10 @@
   <Hello
     :groom="elements.title.groom"
     :bridal="elements.title.bride"
-    :image="title.image"
+    :image="framing.prelude.image"
   />
-  <Greetings :detail="elements" :date="date" :messages="ko.message" />
-  <WeddingDay :date="date" />
+  <Greetings :detail="elements" :messages="framing.prelude.message" />
+  <WeddingDay :date="weddingDay" />
   <Gallary />
   <Maps :location="location" />
 </template>
@@ -21,27 +21,29 @@ import Greetings from "./components/Greetings.vue";
 import Hello from "./components/Hello.vue";
 import Maps from "./components/Maps.vue";
 import WeddingDay from "./components/WeddingDay.vue";
-import { date, en, ko, location, title } from "./config/config.json";
+import config from "./config/config.json";
 
 useKakao(import.meta.env.VITE_KAKAO_API_KEY);
 gsap.registerPlugin(ScrollTrigger);
 
+const { host, framing, location, weddingDay } = config;
+
 const elements = {
   title: {
-    groom: en.groom.firstName.toUpperCase(),
-    bride: en.bride.firstName.toUpperCase(),
+    groom: host.groom.en.firstName.toUpperCase(),
+    bride: host.bride.en.firstName.toUpperCase(),
   },
   groom: {
-    name: `${ko.groom.firstName}`,
-    sibling: ko.groom.sibling,
-    father: `${ko.groom.father.lastName}${ko.groom.father.firstName}`,
-    mother: `${ko.groom.mother.lastName}${ko.groom.mother.firstName}`,
+    name: `${host.groom.name.firstName}`,
+    sibling: host.groom.sibling,
+    father: `${host.groom.father.lastName}${host.groom.father.firstName}`,
+    mother: `${host.groom.mother.lastName}${host.groom.mother.firstName}`,
   },
   bride: {
-    name: `${ko.bride.firstName}`,
-    sibling: ko.bride.sibling,
-    father: `${ko.bride.father.lastName}${ko.bride.father.firstName}`,
-    mother: `${ko.bride.mother.lastName}${ko.bride.mother.firstName}`,
+    name: `${host.bride.name.firstName}`,
+    sibling: host.bride.sibling,
+    father: `${host.bride.father.lastName}${host.bride.father.firstName}`,
+    mother: `${host.bride.mother.lastName}${host.bride.mother.firstName}`,
   },
 };
 
