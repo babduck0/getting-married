@@ -101,21 +101,20 @@ function openNaverMap() {
 <style lang="scss" scoped>
 .navigation {
   position: relative;
-  margin-top: #{$top-gap-h}px;
+  margin-top: 20px;
   .icon {
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
     display: inline-block;
   }
   .icon .appLink {
     display: flex;
     justify-content: center;
     text-align: center;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #e4e2e2;
+    padding-bottom: 10px;
   }
   .icon ul li:not(:last-child) {
-    padding-right: 30px;
+    padding-right: 10px;
   }
   .icon ul li a p {
     font-size: 10px;

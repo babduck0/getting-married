@@ -49,7 +49,6 @@ defineProps<{
 .greetings {
   position: relative;
   color: $col-key;
-  padding-top: 20px;
 
   .message {
     text-align: center;
@@ -61,7 +60,7 @@ defineProps<{
   .parents {
     position: relative;
     z-index: $z-bg;
-    margin: #{$top-gap}px 0 0 0;
+    margin-top: #{$top-gap-h}px;
     > p {
       display: flex;
       flex-wrap: wrap;

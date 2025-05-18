@@ -7,7 +7,7 @@
     </div>
     <div class="map-wrap text-int">
       <KakaoMap
-        class="tt"
+        class="mapFixed tt"
         :lat="location.detail.coordinate.base[0]"
         :lng="location.detail.coordinate.base[1]"
         :draggable="true"
@@ -204,8 +204,8 @@ async function copyAddress() {
     z-index: $z-bg;
     font-size: $font-xs;
     line-height: 1.4;
+    margin: 20px 0;
 
-    margin-top: 20px;
     strong {
       font-weight: bold;
     }
@@ -216,11 +216,11 @@ async function copyAddress() {
   }
   .map-wrap {
     position: relative;
-    margin: 0 -#{$side-padding};
     z-index: $z-bg;
 
     &.mapFixed {
       position: relative;
+      margin: 20px;
       &:before {
         content: "";
         position: absolute;
