@@ -43,6 +43,7 @@ const imageUrl = computed(() => {
 
 .hello {
   position: relative;
+  min-height: 70vh;
   margin: #{$top-gap}px 0;
   color: $col-key;
 
@@ -67,6 +68,8 @@ const imageUrl = computed(() => {
     margin: #{$top-gap-h / 3}px 0;
 
     &.top {
+      margin: 0 0;
+
       animation-delay: 0.3s;
       font-family: "Pretendard", serif;
       letter-spacing: 4px;
@@ -94,7 +97,7 @@ const imageUrl = computed(() => {
     &.image {
       animation-delay: 2.3s;
       width: 100%;
-      margin: #{$top-gap-h}px 0;
+      margin: #{$top-gap}px 0;
     }
   }
 }
