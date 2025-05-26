@@ -9,6 +9,7 @@
   <Gallary />
   <Maps :location="location" />
   <Account :groom="host.groom.account" :bridal="host.bride.account" />
+  <Finale :image="framing.finale.image" />
 </template>
 
 <script setup lang="ts">
@@ -18,6 +19,7 @@ import { onMounted } from "vue";
 import { useKakao } from "vue3-kakao-maps/@utils";
 
 import Account from "./components/Account.vue";
+import Finale from "./components/Finale.vue";
 import Gallary from "./components/Gallary.vue";
 import Greetings from "./components/Greetings.vue";
 import Hello from "./components/Hello.vue";
@@ -57,6 +59,7 @@ function gsaps() {
     ".gallary",
     ".maps",
     ".accounts",
+    ".finale",
   ];
 
   sections.forEach(sectionSelector => {
