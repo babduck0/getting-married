@@ -27,9 +27,12 @@
           >
             <div class="info">
               <span class="name">{{ account.name }}</span>
-              <span class="number"
-                >{{ account.bank }} {{ account.number }}</span
-              >
+              <div class="bank">
+                <img :src="getIconUrl(account.bank)" />
+                <span class="number">
+                  {{ financials[account.bank] }} {{ account.number }}
+                </span>
+              </div>
             </div>
             <span
               class="tt copy-btn material-symbols-outlined"
@@ -48,12 +51,15 @@ import { computed, ref } from "vue";
 
 import ContentsTitle from "@/components/ContentsTitle.vue";
 
+import institute from "../config/financialInstitutions.json";
+
 interface Account {
   name: string;
   bank: string;
   number: string;
 }
 
+const financials = institute as { [key: string]: string };
 const props = defineProps<{
   groom?: Account[];
   bridal?: Account[];
@@ -73,6 +79,13 @@ const toggleGroup = (index: number) => {
     openGroupIndex.value = index;
   }
 };
+
+function getIconUrl(bankCode: string) {
+  return new URL(
+    `../assets/images/icons/financial/${bankCode}.svg`,
+    import.meta.url,
+  ).href;
+}
 
 async function copyToClipboard(text: string) {
   if (!navigator.clipboard || !navigator.clipboard.writeText) {
@@ -173,9 +186,22 @@ const messages = ["참석이 어려우신 분들을 위해 기재했습니다."]
       color: #333;
     }
 
-    .number {
-      font-size: $font-xxs;
-      color: #666;
+    .bank {
+      display: "inline";
+      margin-top: 5rem;
+      img {
+        width: $font-xs;
+        margin: 0 2rem;
+        vertical-align: middle;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow: hidden;
+      }
+      .number {
+        font-size: $font-xxs;
+        color: #666;
+      }
     }
   }
 
