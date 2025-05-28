@@ -89,10 +89,8 @@ const toggleGroup = (index: number) => {
 };
 
 function getIconUrl(bankCode: string) {
-  return new URL(
-    `../assets/images/icons/financial/${bankCode}.svg`,
-    import.meta.url,
-  ).href;
+  return new URL(`../assets/icons/financial/${bankCode}.svg`, import.meta.url)
+    .href;
 }
 
 async function copyToClipboard(text: string) {
@@ -219,7 +217,7 @@ const messages = ["참석이 어려우신 분들을 위해 기재했습니다."]
 
     .kakaopay {
       justify-content: center;
-      background-image: url("@/assets/images/icons/kakaopay.png");
+      background-image: url("@/assets/icons/kakaopay.png");
       background-repeat: no-repeat;
       background-size: 100% $font-xs;
       background-position: left center;

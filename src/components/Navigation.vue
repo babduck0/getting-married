@@ -4,22 +4,22 @@
       <ul class="appLink tt short">
         <li>
           <button @click="openTmap">
-            <img src="@/assets/images/icons/tmap.png" alt="" />
+            <img src="@/assets/icons/tmap.png" alt="" />
           </button>
         </li>
         <li>
           <button @click="openKakaoNavi">
-            <img src="@/assets/images/icons/kakao_navi.png" alt="" />
+            <img src="@/assets/icons/kakao_navi.png" alt="" />
           </button>
         </li>
         <li>
           <button @click="openKakaoMap">
-            <img src="@/assets/images/icons/kakao_map.png" alt="" />
+            <img src="@/assets/icons/kakao_map.png" alt="" />
           </button>
         </li>
         <li>
           <button @click="openNaverMap">
-            <img src="@/assets/images/icons/naver_map.png" alt="" />
+            <img src="@/assets/icons/naver_map.png" alt="" />
           </button>
         </li>
       </ul>
