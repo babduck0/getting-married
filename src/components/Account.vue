@@ -34,11 +34,18 @@
                 </span>
               </div>
             </div>
-            <span
-              class="tt copy-btn material-symbols-outlined"
-              @click="copyToClipboard(account.bank + ' ' + account.number)"
-              >content_copy</span
-            >
+            <div class="icons">
+              <a
+                v-if="account.kakao"
+                class="kakaopay"
+                :href="`https://qr.kakaopay.com/${account.kakao}`"
+              ></a>
+              <span
+                class="tt copy-btn material-symbols-outlined"
+                @click="copyToClipboard(account.bank + ' ' + account.number)"
+                >content_copy</span
+              >
+            </div>
           </div>
         </transition-group>
       </div>
@@ -57,6 +64,7 @@ interface Account {
   name: string;
   bank: string;
   number: string;
+  kakao?: string;
 }
 
 const financials = institute as { [key: string]: string };
@@ -205,6 +213,27 @@ const messages = ["참석이 어려우신 분들을 위해 기재했습니다."]
     }
   }
 
+  .icons {
+    display: inline-flex;
+    border: none;
+
+    .kakaopay {
+      justify-content: center;
+      background-image: url("@/assets/images/icons/kakaopay.png");
+      background-repeat: no-repeat;
+      background-size: 100% $font-xs;
+      background-position: left center;
+      width: $font-lar;
+    }
+    .copy-btn {
+      margin-left: 5rem;
+      background: none;
+      font-size: $font-s;
+      cursor: pointer;
+      color: $col-red;
+    }
+  }
+
   @keyframes fadeSlideIn {
     to {
       opacity: 1;
@@ -215,14 +244,6 @@ const messages = ["참석이 어려우신 분들을 위해 기재했습니다."]
   .fade-slide-enter-active,
   .fade-slide-leave-active {
     transition: all 0.3s ease;
-  }
-
-  .copy-btn {
-    background: none;
-    border: none;
-    font-size: $font-xs;
-    cursor: pointer;
-    color: $col-red;
   }
 }
 </style>
