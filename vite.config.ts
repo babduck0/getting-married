@@ -7,7 +7,16 @@ import eslint from "vite-plugin-eslint";
 // https://vite.dev/config/
 export default defineConfig({
   base: "/getting-married/",
-  plugins: [vue(), eslint()],
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: tag => tag.includes("-"),
+        },
+      },
+    }),
+    eslint(),
+  ],
   css: {
     preprocessorOptions: {
       scss: {

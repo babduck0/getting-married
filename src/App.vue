@@ -5,7 +5,7 @@
     :image="framing.prelude.image"
   />
   <Greetings :detail="elements" :messages="framing.prelude.message" />
-  <WeddingDay :date="weddingDay" />
+  <WeddingDay :date="weddingDay" :schedule="schedule" />
   <Gallary />
   <Maps :location="location" />
   <Account :groom="host.groom.account" :bridal="host.bride.account" />
@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { onMounted } from "vue";
+import { computed, onMounted } from "vue";
 import { useKakao } from "vue3-kakao-maps/@utils";
 
 import Account from "./components/Account.vue";
@@ -50,6 +50,18 @@ const elements = {
     mother: `${host.bride.mother.lastName}${host.bride.mother.firstName}`,
   },
 };
+
+const schedule = computed(() => {
+  const bride = host.bride.name;
+  const groom = host.groom.name;
+  const { city, name, hall } = location;
+
+  return {
+    name: `${groom.lastName}${groom.firstName} ❤️ ${bride.lastName}${bride.firstName} 결혼식`,
+    location: `${city} ${name} ${hall}`,
+    description: framing.prelude.message.join(". "),
+  };
+});
 
 function gsaps() {
   const sections = [
