@@ -87,6 +87,7 @@ defineProps<{
         margin-left: 5px;
         font-size: $font-xxs;
         vertical-align: middle;
+        width: 45rem;
         text-align: left;
         & + strong {
           display: inline-block;
