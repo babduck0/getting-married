@@ -54,8 +54,11 @@
                   class="tt address"
                   >{{ item }}</span
                 >
-                <span class="tt material-symbols-outlined" @click="copyAddress">
-                  content_copy
+                <span
+                  class="tt copy-btn material-symbols-outlined"
+                  @click="copyAddress"
+                >
+                  {{ clipboardIcon }}
                 </span>
               </div>
             </dd>
@@ -128,7 +131,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
 import { KakaoMap, KakaoMapMarker } from "vue3-kakao-maps";
 
 import ContentsTitle from "@/components/ContentsTitle.vue";
@@ -174,6 +177,8 @@ type TransferColorMap = {
   };
 };
 
+const clipboardIcon = ref("content_copy");
+
 const busColorMap = busColors as TransferColorMap;
 const subwayColorMap = seoulMetroColors as TransferColorMap;
 
@@ -189,7 +194,10 @@ async function copyAddress() {
   }
   await navigator.clipboard
     .writeText(address.join(" "))
-    .then(() => alert("주소가 복사되었습니다!"))
+    .then(() => {
+      clipboardIcon.value = "check_circle";
+      setTimeout(() => (clipboardIcon.value = "content_copy"), 1500);
+    })
     .catch(() => alert("복사에 실패했습니다."));
 }
 </script>
@@ -262,6 +270,9 @@ async function copyAddress() {
           margin-right: auto;
           padding-right: 10rem;
           // width: 90%;
+        }
+        .copy-btn {
+          cursor: pointer;
         }
       }
       .color-box {

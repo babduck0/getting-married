@@ -47,7 +47,7 @@
                     financials[account.bank] + ' ' + account.number,
                   )
                 "
-                >content_copy</span
+                >{{ clipboardIcon }}</span
               >
             </div>
           </div>
@@ -82,6 +82,7 @@ const accountGroups = computed(() => [
   { label: "신부측", accounts: props.bridal },
 ]);
 
+const clipboardIcon = ref("content_copy");
 const dropdownRefs = ref<HTMLElement[]>([]);
 const openGroupIndex = ref<number | null>(null);
 const toggleGroup = (index: number) => {
@@ -104,7 +105,10 @@ async function copyToClipboard(text: string) {
   }
   await navigator.clipboard
     .writeText(text)
-    .then(() => alert("계좌번호가 복사되었습니다."))
+    .then(() => {
+      clipboardIcon.value = "check_circle";
+      setTimeout(() => (clipboardIcon.value = "content_copy"), 1500);
+    })
     .catch(() => alert("복사에 실패했습니다. 다시 시도해주세요."));
 }
 const messages = ["참석이 어려우신 분들을 위해 기재했습니다."];
