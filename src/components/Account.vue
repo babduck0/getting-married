@@ -42,7 +42,11 @@
               ></a>
               <span
                 class="tt copy-btn material-symbols-outlined"
-                @click="copyToClipboard(account.bank + ' ' + account.number)"
+                @click="
+                  copyToClipboard(
+                    financials[account.bank] + ' ' + account.number,
+                  )
+                "
                 >content_copy</span
               >
             </div>
