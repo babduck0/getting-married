@@ -9,7 +9,7 @@
   <Gallary />
   <Maps :location="location" />
   <Account :groom="host.groom.account" :bridal="host.bride.account" />
-  <Media :image="framing.finale.image" />
+  <Media :image="framing.finale.image" :video="framing.finale.video" />
 </template>
 
 <script setup lang="ts">
