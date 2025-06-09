@@ -22,7 +22,8 @@ import and from "@/assets/images/and.png";
 const prop = defineProps<{
   groom: string;
   bridal: string;
-  image: string;
+  image?: string;
+  video?: string;
 }>();
 
 const imageModules = import.meta.glob("@/assets/images/*", {
@@ -32,7 +33,7 @@ const imageModules = import.meta.glob("@/assets/images/*", {
 
 const imageUrl = computed(() => {
   const matched = Object.entries(imageModules).find(([path]) =>
-    path.endsWith(prop.image),
+    prop.image ? path.endsWith(prop.image) : undefined,
   );
   return matched ? (matched[1] as string) : undefined;
 });
