@@ -1,5 +1,6 @@
 <template>
   <div class="media">
+    <ContentsTitle v-if="title" :title="title" />
     <div class="text-int">
       <img v-if="imageUrl" class="tt short" :src="imageUrl" alt="key visual" />
       <div v-if="playerOptions" class="tt short">
@@ -20,7 +21,10 @@ import { VideoPlayer } from "@videojs-player/vue";
 import type { VideoJsPlayerOptions } from "video.js";
 import { computed } from "vue";
 
+import ContentsTitle from "@/components/ContentsTitle.vue";
+
 const prop = defineProps<{
+  title?: string;
   image?: string;
   video?: string;
 }>();
@@ -65,18 +69,12 @@ const playerOptions = computed(() => {
 }) as VideoJsPlayerOptions;
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .media {
   position: relative;
-  margin: #{$top-gap-h}px 0;
-  color: $col-key;
+  margin-top: #{$top-gap}px;
 
-  width: 100%;
-  text-align: center;
-
-  img {
-    width: 100%;
-  }
+  img,
   .video-js {
     width: 100%;
   }

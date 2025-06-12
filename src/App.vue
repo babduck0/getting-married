@@ -7,7 +7,7 @@
   <Greetings :detail="elements" :messages="framing.prelude.message" />
   <WeddingDay :date="weddingDay" :schedule="schedule" />
   <Gallary />
-  <Media :video="framing.prelude.video" />
+  <Media title="MOVIE" :video="framing.prelude.video" />
   <Maps :location="location" />
   <Account :groom="host.groom.account" :bridal="host.bride.account" />
   <Media :image="framing.finale.image" />
