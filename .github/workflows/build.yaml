@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: |
+          echo "VITE_PUBLISH_URL=https://${{ github.repository_owner }}.github.io" > .env.production
+          echo "VITE_TITLE=${{ vars.TITLE }}" >> .env.production
+          echo "VITE_DESCRIPTION=${{ vars.DESCRIPTION }}" >> .env.production
+          echo "VITE_KAKAO_API_KEY=${{ secrets.KAKAO_API_KEY }}" >> .env.production
+      - run: npm run build
+      - run: |
+          AUTHOR_NAME=$(git log -1 --pretty=format:'%an')
+          AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')
+          git config --global user.email "$AUTHOR_EMAIL"
+          git config --global user.name "$AUTHOR_NAME"
+          git remote set-url origin https://x-access-token:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
+      - run: npm run deploy
