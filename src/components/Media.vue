@@ -1,6 +1,8 @@
 <template>
-  <div class="finale">
-    <img v-if="imageUrl" class="text-int" :src="imageUrl" alt="key visual" />
+  <div class="media">
+    <div class="text-int">
+      <img v-if="imageUrl" class="tt short" :src="imageUrl" alt="key visual" />
+    </div>
   </div>
 </template>
 
@@ -25,7 +27,7 @@ const imageUrl = computed(() => {
 </script>
 
 <style scoped lang="scss">
-.finale {
+.media {
   position: relative;
   margin: #{$top-gap}px 0;
   color: $col-key;
@@ -33,7 +35,7 @@ const imageUrl = computed(() => {
   width: 100%;
   text-align: center;
 
-  > img {
+  img {
     width: 100%;
   }
 }

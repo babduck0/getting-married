@@ -4,39 +4,26 @@
       <span class="fade-up top">{{ groom }}</span>
       <span class="fade-up middle"><img :src="and" /></span>
       <span class="fade-up bottom">{{ bridal }}</span>
-      <img
-        v-if="imageUrl"
-        class="fade-up image"
-        :src="imageUrl"
-        alt="key visual"
-      />
+      <Media class="fade-up image" :image="media.image" />
     </h1>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-
 import and from "@/assets/images/and.png";
 
-const prop = defineProps<{
-  groom: string;
-  bridal: string;
+import Media from "./Media.vue";
+
+type MediaProps = {
   image?: string;
   video?: string;
+};
+
+defineProps<{
+  groom: string;
+  bridal: string;
+  media: MediaProps;
 }>();
-
-const imageModules = import.meta.glob("@/assets/images/*", {
-  eager: true,
-  import: "default",
-});
-
-const imageUrl = computed(() => {
-  const matched = Object.entries(imageModules).find(([path]) =>
-    prop.image ? path.endsWith(prop.image) : undefined,
-  );
-  return matched ? (matched[1] as string) : undefined;
-});
 </script>
 
 <style scoped lang="scss">

@@ -2,14 +2,14 @@
   <Hello
     :groom="elements.title.groom"
     :bridal="elements.title.bride"
-    :image="framing.prelude.image"
+    :media="framing.prelude"
   />
   <Greetings :detail="elements" :messages="framing.prelude.message" />
   <WeddingDay :date="weddingDay" :schedule="schedule" />
   <Gallary />
   <Maps :location="location" />
   <Account :groom="host.groom.account" :bridal="host.bride.account" />
-  <Finale :image="framing.finale.image" />
+  <Media :image="framing.finale.image" />
 </template>
 
 <script setup lang="ts">
@@ -19,11 +19,11 @@ import { computed, onMounted } from "vue";
 import { useKakao } from "vue3-kakao-maps/@utils";
 
 import Account from "./components/Account.vue";
-import Finale from "./components/Finale.vue";
 import Gallary from "./components/Gallary.vue";
 import Greetings from "./components/Greetings.vue";
 import Hello from "./components/Hello.vue";
 import Maps from "./components/Maps.vue";
+import Media from "./components/Media.vue";
 import WeddingDay from "./components/WeddingDay.vue";
 import config from "./config/config.json";
 
@@ -71,7 +71,7 @@ function gsaps() {
     ".gallary",
     ".maps",
     ".accounts",
-    ".finale",
+    ".media",
   ];
 
   sections.forEach(sectionSelector => {
