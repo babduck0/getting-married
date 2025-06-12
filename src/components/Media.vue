@@ -68,7 +68,7 @@ const playerOptions = computed(() => {
 <style scoped lang="scss">
 .media {
   position: relative;
-  margin: #{$top-gap}px 0;
+  margin: #{$top-gap-h}px 0;
   color: $col-key;
 
   width: 100%;
@@ -79,7 +79,6 @@ const playerOptions = computed(() => {
   }
   .video-js {
     width: 100%;
-    margin: #{$top-gap-h}px 0;
   }
 }
 </style>

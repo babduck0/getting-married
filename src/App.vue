@@ -2,14 +2,15 @@
   <Hello
     :groom="elements.title.groom"
     :bridal="elements.title.bride"
-    :media="framing.prelude"
+    :media="{ image: framing.prelude.image }"
   />
   <Greetings :detail="elements" :messages="framing.prelude.message" />
   <WeddingDay :date="weddingDay" :schedule="schedule" />
   <Gallary />
+  <Media :video="framing.prelude.video" />
   <Maps :location="location" />
   <Account :groom="host.groom.account" :bridal="host.bride.account" />
-  <Media :image="framing.finale.image" :video="framing.finale.video" />
+  <Media :image="framing.finale.image" />
 </template>
 
 <script setup lang="ts">
