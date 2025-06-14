@@ -11,6 +11,7 @@
   <Maps :location="location" />
   <Account :groom="host.groom.account" :bridal="host.bride.account" />
   <Media :image="framing.finale.image" />
+  <div class="spacer"></div>
 </template>
 
 <script setup lang="ts">
@@ -102,4 +103,8 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.spacer {
+  margin-bottom: #{$top-gap}px;
+}
+</style>
