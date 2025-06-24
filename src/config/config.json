@@ -37,6 +37,11 @@
           "bank": "MG",
           "number": "9003-2052-2395-2",
           "kakao": "Ej7rTY8ia"
+        },
+        {
+          "name": "김동원",
+          "bank": "NH",
+          "number": "100037-56-019523"
         }
       ],
       "father": {
@@ -62,7 +67,14 @@
         {
           "name": "남효정",
           "bank": "KAKAO",
-          "number": "3333-02-3951841"
+          "number": "3333-02-3951841",
+          "kakao": "Ej71b8byW"
+        },
+        {
+          "name": "김옥연",
+          "bank": "NH",
+          "number": "352-1924-9886-03",
+          "kakao": "FF1PMm0Pe"
         }
       ],
       "father": {
