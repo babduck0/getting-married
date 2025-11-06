@@ -24,66 +24,66 @@
   "host": {
     "groom": {
       "name": {
-        "firstName": "지훈",
-        "lastName": "안"
+        "firstName": "정훈",
+        "lastName": "김"
       },
       "en": {
-        "firstName": "Jihun",
-        "lastName": "Ahn"
+        "firstName": "Jeonghoon",
+        "lastName": "Kim"
       },
       "account": [
         {
-          "name": "안지훈",
+          "name": "김정훈",
           "bank": "MG",
-          "number": "9003-2052-2395-2",
-          "kakao": "Ej7rTY8ia"
+          "number": "0000-0000-0000-00",
+          "kakao": "FO2vrNno9"
         },
         {
-          "name": "김동원",
+          "name": "ABC",
           "bank": "NH",
-          "number": "100037-56-019523"
+          "number": "11111-1111-1111-11"
         }
       ],
       "father": {
-          "firstName": "병규",
-          "lastName": "안"
+          "firstName": "AB",
+          "lastName": "C"
       },
       "mother": {
-          "firstName": "동원",
-          "lastName": "김"
+          "firstName": "AB",
+          "lastName": "C"
       },
       "sibling": "아들"
     },
     "bride": {
       "name": {
-        "firstName": "효정",
-        "lastName": "남"
+        "firstName": "나연",
+        "lastName": "장"
       },
       "en": {
-        "firstName": "Hyojeong",
-        "lastName": "Nam"
+        "firstName": "나연",
+        "lastName": "장"
       },
       "account": [
         {
-          "name": "남효정",
+          "name": "장나연",
           "bank": "KAKAO",
-          "number": "3333-02-3951841",
-          "kakao": "Ej71b8byW"
+          "number": "0000-0000-0000-00",
+          "kakao": "FO2vrNno9"
         },
         {
-          "name": "김옥연",
+          "name": "DEF",
           "bank": "NH",
-          "number": "352-1924-9886-03",
-          "kakao": "FF1PMm0Pe"
+          "number": "0000-0000-0000-00",
+          "kakao": "FO2vrNno9"
         }
       ],
       "father": {
-          "firstName": "광우",
-          "lastName": "남"
+          "firstName": "EEE",
+          "lastName": "F"
       },
       "mother": {
-          "firstName": "옥연",
-          "lastName": "김"
+          "firstName": "TTT",
+          "lastName": "T"
       },
       "sibling": "딸"
     }
@@ -102,10 +102,10 @@
       },
       "transfortation": {
         "car": {
-          "address": ["경기 성남시 분당구 판교역로226번길 16"]
+          "address": ["경기 성남시 분당구", "판교역로226번길 16"]
         },
         "subway": {
-          "lines": ["신분당선", "경강선"],
+          "lines": ["신분당선", "3"],
           "desc": ["판교역 1번출구로 나온후, 직진 도보 6분거리 (SK 주유소 뒷 건물)", "(판교역 1번출구에서 웨딩홀 셔틀버스 운행)"]
         },
         "bus": [
