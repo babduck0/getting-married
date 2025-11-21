@@ -16,7 +16,7 @@
         :selectable="false"
       />
       <div class="text-int d-day">
-        <strong class="tt">{{ weddingDay.dDay }}일</strong>
+        <strong class="tt">{{ Math.abs(weddingDay.dDay) }}일</strong>
         <span class="tt">{{
           weddingDay.dDay > 0 ? "남았습니다." : "지났습니다."
         }}</span>
