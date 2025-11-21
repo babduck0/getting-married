@@ -71,7 +71,7 @@
             <dt>
               <span class="material-symbols-outlined">directions_subway</span>
             </dt>
-            <dd>
+            <dd v-if="location.detail.transfortation.subway">
               <div>
                 <span
                   v-for="(metro, idx) in location.detail.transfortation.subway
@@ -155,11 +155,11 @@ type LocationInformation = {
       car: {
         address: string[];
       };
-      subway: {
+      subway?: {
         lines: string[];
         desc: string[];
       };
-      bus: {
+      bus?: {
         lines: {
           number: number;
           color: string;
