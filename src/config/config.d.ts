@@ -63,7 +63,7 @@ declare module "@/config/config.json" {
           };
           bus?: {
             lines: {
-              number: number;
+              number: number | string;
               color: string;
             }[];
             desc: string;

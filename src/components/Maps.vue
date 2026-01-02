@@ -161,7 +161,7 @@ type LocationInformation = {
       };
       bus?: {
         lines: {
-          number: number;
+          number: number | string;
           color: string;
         }[];
         desc: string;
