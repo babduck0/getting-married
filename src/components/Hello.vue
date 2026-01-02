@@ -4,7 +4,7 @@
       <span class="fade-up top">{{ groom }}</span>
       <span class="fade-up middle"><img :src="and" /></span>
       <span class="fade-up bottom">{{ bridal }}</span>
-      <Media class="fade-up image" :image="media.image" />
+      <Media v-if="media.image" class="fade-up image" :image="media.image" />
     </h1>
   </div>
 </template>
