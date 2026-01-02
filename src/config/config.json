@@ -1,8 +1,8 @@
 {
   "framing": {
     "prelude": {
-      "image": "head.jpg",
-      "video": "hello.mp4",
+      "image": "",
+      "video": "",
       "message": [
         "사랑하는 이들에게",
         "나란한 이름으로 보내는 첫 번째 편지",
@@ -11,15 +11,15 @@
       ]
     },
     "finale": {
-      "image": "footer.jpg"
+      "image": ""
     }
   },
   "weddingDay": {
-    "year": 2025,
-    "month": 8,
-    "day": 2,
-    "hour": 12,
-    "minute": 30
+    "year": 2026,
+    "month": 4,
+    "day": 11,
+    "hour": 14,
+    "minute": 0
   },
   "host": {
     "groom": {
@@ -34,8 +34,8 @@
       "account": [
         {
           "name": "김정훈",
-          "bank": "MG",
-          "number": "0000-0000-0000-00",
+          "bank": "WR",
+          "number": "1002-560-214539",
           "kakao": "FO2vrNno9"
         },
         {
@@ -45,12 +45,12 @@
         }
       ],
       "father": {
-          "firstName": "AB",
-          "lastName": "C"
+          "firstName": "현규",
+          "lastName": "김"
       },
       "mother": {
-          "firstName": "AB",
-          "lastName": "C"
+          "firstName": "선희",
+          "lastName": "박"
       },
       "sibling": "아들"
     },
@@ -60,41 +60,41 @@
         "lastName": "장"
       },
       "en": {
-        "firstName": "나연",
-        "lastName": "장"
+        "firstName": "Nayeon",
+        "lastName": "Jang"
       },
       "account": [
         {
           "name": "장나연",
-          "bank": "KAKAO",
-          "number": "0000-0000-0000-00",
+          "bank": "TOSS",
+          "number": "1002-3523-5751",
           "kakao": "FO2vrNno9"
         },
         {
-          "name": "DEF",
+          "name": "TMP",
           "bank": "NH",
           "number": "0000-0000-0000-00",
           "kakao": "FO2vrNno9"
         }
       ],
       "father": {
-          "firstName": "EEE",
-          "lastName": "E"
+          "firstName": "상길",
+          "lastName": "장"
       },
       "mother": {
-          "firstName": "TTT",
-          "lastName": "T"
+          "firstName": "정남",
+          "lastName": "정"
       },
       "sibling": "딸"
     }
   },
   "location": {
-    "name": "W스퀘어컨벤션",
-    "city": "판교",
-    "hall": "8층 채플홀",
+    "name": "브라이드밸리",
+    "city": "양재",
+    "hall": "단독홀",
     "detail": {
       "coordinate": {
-        "base": [37.4005441, 127.1114319],
+        "base": [37.486952, 127.033435],
         "references": {
           "판교역 1번 출구": [37.3952597473195, 127.11149216516391],
           "한국전자무역센터": [37.40281029895642, 127.11149770399044]
@@ -102,42 +102,149 @@
       },
       "transfortation": {
         "car": {
-          "address": ["경기 성남시 분당구", "판교역로226번길 16"]
+          "address": ["서울 강남구", "강남대로 262 캠코양재타워 지하1층"]
         },
         "subway": {
           "lines": ["신분당선", "3"],
-          "desc": ["판교역 1번출구로 나온후, 직진 도보 6분거리 (SK 주유소 뒷 건물)", "(판교역 1번출구에서 웨딩홀 셔틀버스 운행)"]
+          "desc": ["양재역에서 3번출구로 나온 후, 직진 200m 캠코양재타워 지하 1층"]
         },
         "bus": [
           {
             "lines": [
               {
-                "number": 4000,
+                "number": 140,
+                "color": "간선"
+              },
+              {
+                "number": 341,
+                "color": "간선"
+              },
+              {
+                "number": 400,
+                "color": "간선"
+              },
+              {
+                "number": 402,
+                "color": "간선"
+              },
+              {
+                "number": 421,
+                "color": "간선"
+              },
+              {
+                "number": 440,
+                "color": "간선"
+              },
+              {
+                "number": 441,
+                "color": "간선"
+              },
+              {
+                "number": 452,
+                "color": "간선"
+              },
+              {
+                "number": 470,
+                "color": "간선"
+              },
+              {
+                "number": 641,
+                "color": "간선"
+              },
+              {
+                "number": 741,
+                "color": "간선"
+              },
+              {
+                "number": "0411",
+                "color": "지선"
+              },
+              {
+                "number": 917,
+                "color": "일반"
+              },
+              {
+                "number": 9404,
+                "color": "광역"
+              },
+              {
+                "number": 9408,
+                "color": "광역"
+              },
+              {
+                "number": 9409,
+                "color": "광역"
+              },
+              {
+                "number": 9501,
+                "color": "광역"
+              },
+              {
+                "number": 9711,
+                "color": "광역"
+              },
+              {
+                "number": 9802,
+                "color": "광역"
+              },
+              {
+                "number": 1550,
+                "color": "광역"
+              },
+              {
+                "number": "1560B",
+                "color": "광역"
+              },
+              {
+                "number": 1570,
+                "color": "광역"
+              },
+              {
+                "number": 3002,
+                "color": "광역"
+              },
+              {
+                "number": 3007,
+                "color": "광역"
+              },
+              {
+                "number": 3030,
+                "color": "광역"
+              },
+              {
+                "number": 3100,
+                "color": "광역"
+              },
+              {
+                "number": 4401,
+                "color": "광역"
+              },
+              {
+                "number": 4402,
+                "color": "광역"
+              },
+              {
+                "number": "5001B",
+                "color": "광역"
+              },
+              {
+                "number": "5002B",
+                "color": "광역"
+              },
+              {
+                "number": 9202,
+                "color": "광역"
+              },
+              {
+                "number": 9400,
+                "color": "광역"
+              },
+              {
+                "number": 9800,
                 "color": "광역"
               }
             ],
-            "desc": "한국무역정보통신 하차 (수원 → 판교)"
-          },
-          {
-            "lines": [
-              {
-                "number": 330,
-                "color": "경기시내"
-              },
-              {
-                "number": 350,
-                "color": "경기시내"
-              },
-              {
-                "number": 380,
-                "color": "경기시내"
-              },
-              {
-                "number": 390,
-                "color": "경기시내"
-              }
-            ],
-            "desc": "차그룹 컨소시엄 하차 (야탑 → 판교)"
+            "desc": "뱅뱅사거리(중) 하차 후 횡단보도 건너 캠코양재타워 지하1층"
           }
         ]
       }
