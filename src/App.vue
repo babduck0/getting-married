@@ -7,10 +7,14 @@
   <Greetings :detail="elements" :messages="framing.prelude.message" />
   <WeddingDay :date="weddingDay" :schedule="schedule" />
   <Gallary />
-  <Media title="MOVIE" :video="framing.prelude.video" />
+  <Media
+    v-if="framing.prelude?.video"
+    title="MOVIE"
+    :video="framing.prelude.video"
+  />
   <Maps :location="location" />
   <Account :groom="host.groom.account" :bridal="host.bride.account" />
-  <Media :image="framing.finale.image" />
+  <Media v-if="framing.finale.image" :image="framing.finale.image" />
   <div class="spacer"></div>
 </template>
 
@@ -20,6 +24,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { computed, onMounted } from "vue";
 import { useKakao } from "vue3-kakao-maps/@utils";
 
+import config from "@/config/config.json";
+
 import Account from "./components/Account.vue";
 import Gallary from "./components/Gallary.vue";
 import Greetings from "./components/Greetings.vue";
@@ -27,7 +33,6 @@ import Hello from "./components/Hello.vue";
 import Maps from "./components/Maps.vue";
 import Media from "./components/Media.vue";
 import WeddingDay from "./components/WeddingDay.vue";
-import config from "./config/config.json";
 
 useKakao(import.meta.env.VITE_KAKAO_API_KEY);
 gsap.registerPlugin(ScrollTrigger);
@@ -61,7 +66,7 @@ const schedule = computed(() => {
   return {
     name: `${groom.lastName}${groom.firstName} ❤️ ${bride.lastName}${bride.firstName} 결혼식`,
     location: `${city} ${name} ${hall}`,
-    description: framing.prelude.message.join(". "),
+    description: framing.prelude.message?.join(". ") || "",
   };
 });
 
