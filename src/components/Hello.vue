@@ -59,7 +59,7 @@ defineProps<{
       margin: 0 0;
 
       animation-delay: 0.3s;
-      font-family: "Pretendard", serif;
+      font-family: "Simonetta", serif;
       letter-spacing: 4px;
     }
 
@@ -78,7 +78,7 @@ defineProps<{
 
     &.bottom {
       animation-delay: 1.9s;
-      font-family: "Pretendard", serif;
+      font-family: "Simonetta", serif;
       letter-spacing: 4px;
     }
 
