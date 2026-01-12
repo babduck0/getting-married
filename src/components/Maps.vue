@@ -269,6 +269,7 @@ async function copyAddress() {
         .address {
           margin-right: auto;
           padding-right: 10rem;
+          word-break: keep-all;
           // width: 90%;
         }
         .copy-btn {
