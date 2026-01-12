@@ -105,6 +105,35 @@ function gsaps() {
 
 onMounted(() => {
   gsaps();
+
+  // Prevent pinch zoom on mobile (especially Samsung Internet)
+  document.addEventListener(
+    "touchstart",
+    e => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    },
+    { passive: false },
+  );
+
+  document.addEventListener(
+    "touchmove",
+    e => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    },
+    { passive: false },
+  );
+
+  document.addEventListener("gesturestart", e => {
+    e.preventDefault();
+  });
+
+  document.addEventListener("gesturechange", e => {
+    e.preventDefault();
+  });
 });
 </script>
 
