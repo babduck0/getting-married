@@ -1,6 +1,6 @@
 <template>
   <div class="gallary">
-    <ContentsTitle title="GALLARY" />
+    <ContentsTitle title="GALLERY" />
     <div class="text-int">
       <Carousel
         id="gallery"
