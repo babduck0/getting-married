@@ -6,6 +6,8 @@
 
 [here](https://jhunahn.github.io/getting-merried/)
 
+[formal](https://babduck0.github.io/getting-married/?v=formal)
+
 ## How to implement 
 
 `variables`를 추가한다.

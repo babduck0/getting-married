@@ -52,6 +52,26 @@ import ContentsTitle from "@/components/ContentsTitle.vue";
 
 const currentSlide = ref(0);
 
+const formalOnly = new Set([
+  "00",
+  "01",
+  "02",
+  "03",
+  "04",
+  "05",
+  "06",
+  "07",
+  "08",
+  "10",
+  "11",
+  "12",
+  "13",
+  "15",
+]);
+
+const isFormal =
+  new URLSearchParams(window.location.search).get("v") === "formal";
+
 const imageModules = import.meta.glob(
   "@/assets/images/gallary/*.{jpg,jpeg,png,gif}",
   {
@@ -61,10 +81,20 @@ const imageModules = import.meta.glob(
 );
 
 const images = ref(
-  Array.from(Object.values(imageModules), (src, index) => ({
-    id: index + 1,
-    url: String(src),
-  })),
+  Object.entries(imageModules)
+    .filter(([path]) => {
+      if (!isFormal) return true;
+      const filename =
+        path
+          .split("/")
+          .pop()
+          ?.replace(/\.\w+$/, "") ?? "";
+      return formalOnly.has(filename);
+    })
+    .map(([, src], index) => ({
+      id: index + 1,
+      url: String(src),
+    })),
 );
 
 const galleryConfig = {
